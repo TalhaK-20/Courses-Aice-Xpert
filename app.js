@@ -58,13 +58,11 @@ app.use(session({
 }));
 
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, '/tmp');
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
+const storage = multer.memoryStorage();
+
+upload = multer({
+    storage: storage,
+    limits: { fileSize: 5 * 1024 * 1024 }, // Limit file size to 5 MB (optional)
 });
 
 
