@@ -356,16 +356,16 @@ app.post('/submit', upload.fields([
         const emailHtml = generateEmailHtml();
 
         const mailOptions = {
-            from: 'info@aicexpert.com',
+            from: 'info@courses.aicexpert.com',
             to: email,
             bcc: recipients.join(','),
-            subject: 'AICE XPERT - Confirmation Regarding Course Enrollment',
+            subject: 'AICE XPERT Courses - Confirmation Regarding Course Enrollment',
             html: emailHtml
         };
 
         await transporter.sendMail(mailOptions);
 
-        res.redirect("https://courses-aicexpert.vercel.app/index.html");
+        res.redirect("https://courses.aicexpert.com");
     }
 
     catch (error) {
