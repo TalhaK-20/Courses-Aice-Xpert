@@ -356,7 +356,7 @@ app.post('/submit', upload.fields([
         const emailHtml = generateEmailHtml();
 
         const mailOptions = {
-            from: 'info@courses.aicexpert.com',
+            from: 'info@aicexpert.com',
             to: email,
             bcc: recipients.join(','),
             subject: 'AICE XPERT Courses - Confirmation Regarding Course Enrollment',
